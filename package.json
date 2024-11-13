@@ -1,0 +1,14 @@
+{
+  "name": "monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:server": "pnpm --filter server start",
+    "start:web": "pnpm --filter web start",
+    "build:web": "pnpm --filter web build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

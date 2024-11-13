@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端监控SDK-ajax请求监控</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="content">
+            <input type="button" value="ajax请求成功" onclick="sendAjaxSuccess()" id="success" />
+            <input type="button" value="ajax请求失败" onclick="sendAjaxFail()" id="fail" />
+        </div>
+
+    </div>
+
+    <script>
+        function sendAjaxSuccess() {
+            let xhr = new XMLHttpRequest
+            xhr.open("get", "/success", true)
+            xhr.responseType = 'json'
+            xhr.onload = () => {
+                console.log(xhr.response);
+            }
+            xhr.onerror = () => {
+
+            }
+            xhr.send()
+        }
+
+        function sendAjaxFail() {
+            let xhr = new XMLHttpRequest
+            xhr.open("post", "/fail", true)
+            xhr.responseType = 'json'
+            xhr.onload = () => {
+                console.log(xhr.response);
+
+            }
+            xhr.onerror = () => {
+
+            }
+            xhr.send("name=ws")
+
+        }
+    </script>
+</body>
+
+</html>
